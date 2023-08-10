@@ -9,6 +9,7 @@
 </head>
 <body>
     This is about
+    <h1>{{ $name }}</h1>
 </body>
 <script src="js/script.js"></script>
 </html>

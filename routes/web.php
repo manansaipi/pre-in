@@ -14,9 +14,25 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('dashboard.contents.home', [
+        "title" => "Home"
+    ]);
+});
+
+Route::get('/charts', function () {
+    return view('dashboard.contents.chart', [
+        "title" => "Charts"
+    ]);
 });
 
 Route::get('/about', function () {
-    return view('about');
+    return view('about', [
+        "name" => "ben"
+    ]);
+});
+
+Route::get('/login', function () {
+    return view('login/login', [
+        "name" => "ben"
+    ]);
 });
