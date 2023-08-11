@@ -1,6 +1,9 @@
 <?php
 
+use App\Http\Controllers\PostController;
+use App\Models\Post;
 use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -19,11 +22,8 @@ Route::get('/', function () {
     ]);
 });
 
-Route::get('/charts', function () {
-    return view('dashboard.contents.chart', [
-        "title" => "Charts"
-    ]);
-});
+Route::get('/charts', [PostController::class, 'index']);
+Route::get('/post/{slug}', [PostController::class, 'show']);
 
 Route::get('/about', function () {
     return view('about', [
