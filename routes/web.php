@@ -3,6 +3,7 @@
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PostController;
 use App\Models\Post;
+use App\Models\Category;
 use Illuminate\Support\Facades\Route;
 
 
@@ -25,6 +26,9 @@ Route::get('/', function () {
 
 Route::get('/charts', [PostController::class, 'index']);
 Route::get('/post/{post:slug}', [PostController::class, 'show']);
+Route::get('/categories/{category:slug}', [PostController::class, 'showByCat']);
+
+Route::get('/categories', [PostController::class, 'categories']);
 
 Route::get('/about', function () {
     return view('about', [

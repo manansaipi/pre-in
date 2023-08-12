@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+
 use App\Models\Post;
+use App\Models\Category;
 
 class PostController extends Controller
 {
@@ -19,7 +21,22 @@ class PostController extends Controller
         return view('dashboard.contents.post', [
             "title" => "Charts",
             "post" => $post,
-            "posts" => Post::all(),
+            "user" => "ben",
+        ]);
+    }
+    public function showByCat(Category $category)
+    {
+        return view('dashboard.contents.category', [
+            'title' => $category->name,
+            'posts' => $category->posts,
+            'category' => $category->name,
+        ]);
+    }
+    public function categories()
+    {
+        return view('dashboard.contents.categories', [
+            'title' => "Charts",
+            'categories' => Category::all()
         ]);
     }
 }
