@@ -96,7 +96,7 @@
             <li class="nav-item {{ ($title === "Charts") ? 'active' : '' }}">
                 <a class="nav-link" href="/charts">
                     <i class="fas fa-fw fa-chart-area"></i>
-                    <span>Charts</span></a>
+                    <span>Chart</span></a>
             </li>
 
             <!-- Nav Item - Tables -->

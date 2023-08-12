@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PostController;
 use App\Models\Post;
 use Illuminate\Support\Facades\Route;
@@ -23,7 +24,7 @@ Route::get('/', function () {
 });
 
 Route::get('/charts', [PostController::class, 'index']);
-Route::get('/post/{slug}', [PostController::class, 'show']);
+Route::get('/post/{post:slug}', [PostController::class, 'show']);
 
 Route::get('/about', function () {
     return view('about', [
@@ -31,8 +32,4 @@ Route::get('/about', function () {
     ]);
 });
 
-Route::get('/login', function () {
-    return view('login/login', [
-        "name" => "ben"
-    ]);
-});
+Route::get('/login', [LoginController::class, 'index']);

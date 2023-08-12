@@ -14,11 +14,11 @@ class PostController extends Controller
             "posts" => Post::all()
         ]);
     }
-    public function show($slug)
+    public function show(Post $post)
     {
         return view('dashboard.contents.post', [
             "title" => "Charts",
-            "post" => Post::find($slug),
+            "post" => $post,
             "posts" => Post::all(),
         ]);
     }
