@@ -17,22 +17,18 @@ class DatabaseSeeder extends Seeder
     {
         // \App\Models\User::factory(10)->create();
 
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
+
+        // User::create([
+        //     'name' => 'ben',
+        //     'email' => 'ben@gmail.com',
+        //     'password' => bcrypt('12345')
         // ]);
-
-        User::create([
-            'name' => 'ben',
-            'email' => 'ben@gmail.com',
-            'password' => bcrypt('12345')
-        ]);
-        User::create([
-            'name' => 'dodi',
-            'email' => 'dodi@gmail.com',
-            'password' => bcrypt('12345')
-        ]);
-
+        // User::create([
+        //     'name' => 'dodi',
+        //     'email' => 'dodi@gmail.com',
+        //     'password' => bcrypt('12345')
+        // ]);
+        User::factory(5)->create();
         Category::create([
             'name' => 'Web Programming',
             'slug' => 'web-programming'
@@ -41,33 +37,37 @@ class DatabaseSeeder extends Seeder
             'name' => 'Personal',
             'slug' => 'personal'
         ]);
-
-
-        Post::create([
-            'title' => 'TitleOne',
-            'slug' => 'titleone',
-            'exerpt' => 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ab quaerat doloribus deserunt perferendis at harum a',
-            'body' => 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ab quaerat doloribus deserunt perferendis at harum aliquam suscipit blanditiis commodiLorem, ipsum dolor sit amet consectetur adipisicing elit. Ab quaerat doloribus deserunt perferendis at harum aliquam suscipit blanditiis commodiLorem, ipsum dolor sit amet consectetur adipisicing elit. Ab quaerat doloribus deserunt perferendis at harum aliquam suscipit blanditiis commodiLorem, ipsum dolor sit amet consectetur adipisicing elit. Ab quaerat doloribus deserunt perferendis at harum aliquam suscipit blanditiis commodi sit amet consectetur adipisicing elit. Ab quaerat doloribus deserunt perferendis at harum aliquam suscipit blanditiis commodiLorem, ipsum dolor sit amet consectetur adipisicing elit. Ab quaerat doloribus deserunt perferendis at harum aliquam suscipit blanditiis commod',
-            'category_id' => 2,
-            'user_id' => 1,
+        Category::create([
+            'name' => 'Programming',
+            'slug' => 'programming'
         ]);
+        Post::factory(10)->create();
 
-        Post::create([
-            'title' => 'TitleTwo',
-            'slug' => 'titletwo',
-            'exerpt' => 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ab quaerat doloribus deserunt perferendis at harum aliquam suscipit blanditiis commodi',
-            'body' => 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ab quaerat doloribus deserunt perferendis at harum aliquam suscipit blanditiis commodiLorem, ipsum dolor sit amet consectetur adipisicing elit. Ab quaerat doloribus deserunt perferendis at harum aliquam suscipit blanditiis commodiLorem, ipsum dolor sit amet consectetur adipisicing elit. Ab quaerat doloribus deserunt perferendis at harum aliquam suscipit blanditiis commodiLorem, ipsum dolor sit amet consectetur adipisicing elit. Ab quaerat doloribus deserunt perferendis at harum aliquam suscipit blanditiis commodi',
-            'category_id' => 1,
-            'user_id' => 1,
-        ]);
+        // Post::create([
+        //     'title' => 'TitleOne',
+        //     'slug' => 'titleone',
+        //     'exerpt' => 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ab quaerat doloribus deserunt perferendis at harum a',
+        //     'body' => 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ab quaerat doloribus deserunt perferendis at harum aliquam suscipit blanditiis commodiLorem, ipsum dolor sit amet consectetur adipisicing elit. Ab quaerat doloribus deserunt perferendis at harum aliquam suscipit blanditiis commodiLorem, ipsum dolor sit amet consectetur adipisicing elit. Ab quaerat doloribus deserunt perferendis at harum aliquam suscipit blanditiis commodiLorem, ipsum dolor sit amet consectetur adipisicing elit. Ab quaerat doloribus deserunt perferendis at harum aliquam suscipit blanditiis commodi sit amet consectetur adipisicing elit. Ab quaerat doloribus deserunt perferendis at harum aliquam suscipit blanditiis commodiLorem, ipsum dolor sit amet consectetur adipisicing elit. Ab quaerat doloribus deserunt perferendis at harum aliquam suscipit blanditiis commod',
+        //     'category_id' => 2,
+        //     'user_id' => 1,
+        // ]);
 
-        Post::create([
-            'title' => 'TitleTwo',
-            'slug' => 'titletwo',
-            'exerpt' => 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ab quaerat doloribus deserunt perferendis at harum aliquam suscipit blanditiis commodi',
-            'body' => 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ab quaerat doloribus deserunt perferendis at harum aliquam suscipit blanditiis commodiLorem, ipsum dolor sit amet consectetur adipisicing elit. Ab quaerat doloribus deserunt perferendis at harum aliquam suscipit blanditiis commodiLorem, ipsum dolor sit amet consectetur adipisicing elit. Ab quaerat doloribus deserunt perferendis at harum aliquam suscipit blanditiis commodiLorem, ipsum dolor sit amet consectetur adipisicing elit. Ab quaerat doloribus deserunt perferendis at harum aliquam suscipit blanditiis commodi',
-            'category_id' => 2,
-            'user_id' => 2,
-        ]);
+        // Post::create([
+        //     'title' => 'TitleTwo',
+        //     'slug' => 'titletwo',
+        //     'exerpt' => 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ab quaerat doloribus deserunt perferendis at harum aliquam suscipit blanditiis commodi',
+        //     'body' => 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ab quaerat doloribus deserunt perferendis at harum aliquam suscipit blanditiis commodiLorem, ipsum dolor sit amet consectetur adipisicing elit. Ab quaerat doloribus deserunt perferendis at harum aliquam suscipit blanditiis commodiLorem, ipsum dolor sit amet consectetur adipisicing elit. Ab quaerat doloribus deserunt perferendis at harum aliquam suscipit blanditiis commodiLorem, ipsum dolor sit amet consectetur adipisicing elit. Ab quaerat doloribus deserunt perferendis at harum aliquam suscipit blanditiis commodi',
+        //     'category_id' => 1,
+        //     'user_id' => 1,
+        // ]);
+
+        // Post::create([
+        //     'title' => 'TitleTwo',
+        //     'slug' => 'titletwo',
+        //     'exerpt' => 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ab quaerat doloribus deserunt perferendis at harum aliquam suscipit blanditiis commodi',
+        //     'body' => 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ab quaerat doloribus deserunt perferendis at harum aliquam suscipit blanditiis commodiLorem, ipsum dolor sit amet consectetur adipisicing elit. Ab quaerat doloribus deserunt perferendis at harum aliquam suscipit blanditiis commodiLorem, ipsum dolor sit amet consectetur adipisicing elit. Ab quaerat doloribus deserunt perferendis at harum aliquam suscipit blanditiis commodiLorem, ipsum dolor sit amet consectetur adipisicing elit. Ab quaerat doloribus deserunt perferendis at harum aliquam suscipit blanditiis commodi',
+        //     'category_id' => 2,
+        //     'user_id' => 2,
+        // ]);
     }
 }

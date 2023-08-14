@@ -13,7 +13,11 @@ class PostController extends Controller
     {
         return view('dashboard.contents.chart', [
             "title" => "Charts",
-            "posts" => Post::all()
+            // "posts" => Post::all()
+            // "posts" => Post::with(['author', 'category'])->latest()->get(), // eager loading to fix n+1 problem
+            "posts" =>  Post::latest()->filter(request(['search', 'category']))->get(), // eager loading to fix n+1 problem but already do in model os no need 'with' in here anymore
+            "postBy" => "all",
+            "name" => "all"
         ]);
     }
     public function show(Post $post)
@@ -26,10 +30,11 @@ class PostController extends Controller
     }
     public function showByCat(Category $category)
     {
-        return view('dashboard.contents.category', [
+        return view('dashboard.contents.chart', [
             'title' => $category->name,
-            'posts' => $category->posts,
-            'category' => $category->name,
+            'posts' => $category->posts->load('category', 'author'), // lazy eager loading to fix n+1 problem
+            'name' => $category->name,
+            'postBy' => "Category",
         ]);
     }
     public function categories()
