@@ -22,7 +22,7 @@ Route::get('/', function () {
     return view('dashboard.contents.home', [
         "title" => "Home"
     ]);
-});
+})->middleware('auth');
 
 Route::get('/charts', [PostController::class, 'index']);
 Route::get('/post/{post:slug}', [PostController::class, 'show']);
@@ -45,7 +45,9 @@ Route::get('/about', function () {
         "name" => "ben"
     ]);
 });
-
-Route::get('/login', [LoginController::class, 'login']);
-Route::get('/register', [LoginController::class, 'register']);
+// give the roue name to 'login' so focusing on route name istead of url '/login/
+Route::get('/login', [LoginController::class, 'login'])->name('login')->middleware('guest');
+Route::post('/login', [LoginController::class, 'authenticate']);
+Route::post('/logout', [LoginController::class, 'logout']);
+Route::get('/register', [LoginController::class, 'register'])->middleware('guest');
 Route::post('/register', [LoginController::class, 'store']);
