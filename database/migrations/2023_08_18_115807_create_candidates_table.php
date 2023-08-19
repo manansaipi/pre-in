@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('party_id');
             $table->string('name');
+            $table->integer('no_urut');
             $table->timestamps();
         });
     }

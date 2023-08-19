@@ -13,7 +13,10 @@ class CandidateController extends Controller
      */
     public function index()
     {
-        //
+        return view('dashboard.contents.table_candidate', [
+            'active' => 'candidates',
+            'candidates' => Candidate::all(),
+        ]);
     }
 
     /**

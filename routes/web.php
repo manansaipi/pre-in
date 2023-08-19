@@ -3,6 +3,8 @@
 use App\Http\Controllers\DashboardPostController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\CandidateController;
+use App\Models\Candidate;
 use App\Models\Post;
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
@@ -21,7 +23,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('dashboard.contents.home', [
-        "title" => "Home"
+        "active" => "Home"
     ]);
 })->middleware('auth');
 
@@ -54,3 +56,5 @@ Route::get('/register', [LoginController::class, 'register'])->middleware('guest
 Route::post('/register', [LoginController::class, 'store']);
 
 Route::resource('/dashboard/posts', DashboardPostController::class)->middleware('auth');
+
+Route::resource('/candidates', CandidateController::class)->middleware('auth');

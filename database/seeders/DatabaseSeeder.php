@@ -3,9 +3,12 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+
+use App\Models\Candidate;
 use Illuminate\Database\Seeder;
 use App\Models\User;
 use App\Models\Category;
+use App\Models\Party;
 use App\Models\Post;
 
 class DatabaseSeeder extends Seeder
@@ -18,30 +21,54 @@ class DatabaseSeeder extends Seeder
         // \App\Models\User::factory(10)->create();
 
 
-        // User::create([
-        //     'name' => 'ben',
-        //     'email' => 'ben@gmail.com',
-        //     'password' => bcrypt('12345')
+        User::create([
+            'name' => 'Abdul Mannan Saipi',
+            'username' => 'ben',
+            'email' => 'abdul.saipi@student.president.ac.id',
+            'password' => bcrypt('12345')
+        ]);
+
+        // Party::create([
+        //     'name' => 'Hati Nurani Rakyat',
         // ]);
+        // Party::create([
+        //     'name' => 'Golongan Karya',
+        // ]);
+        // Party::create([
+        //     'name' => 'Gerindra',
+        // ]);
+
+        Candidate::factory(20)->create();
+        Party::factory(5)->create();
+
+
+
+
+
+
+
+
+
+
         // User::create([
         //     'name' => 'dodi',
         //     'email' => 'dodi@gmail.com',
         //     'password' => bcrypt('12345')
         // ]);
-        User::factory(5)->create();
-        Category::create([
-            'name' => 'Web Programming',
-            'slug' => 'web-programming'
-        ]);
-        Category::create([
-            'name' => 'Personal',
-            'slug' => 'personal'
-        ]);
-        Category::create([
-            'name' => 'Programming',
-            'slug' => 'programming'
-        ]);
-        Post::factory(10)->create();
+        // User::factory(5)->create();
+        // Category::create([
+        //     'name' => 'Web Programming',
+        //     'slug' => 'web-programming'
+        // ]);
+        // Category::create([
+        //     'name' => 'Personal',
+        //     'slug' => 'personal'
+        // ]);
+        // Category::create([
+        //     'name' => 'Programming',
+        //     'slug' => 'programming'
+        // ]);
+        // Post::factory(10)->create();
 
         // Post::create([
         //     'title' => 'TitleOne',

@@ -17,7 +17,9 @@ class CandidateFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'party_id' => mt_rand(1, 3),
+            'name' => fake()->name(),
+            'no_urut' => mt_rand(1, 5),
         ];
     }
 }
