@@ -4,6 +4,7 @@ use App\Http\Controllers\DashboardPostController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\CandidateController;
+use App\Http\Controllers\VillageController;
 use App\Models\Candidate;
 use App\Models\Post;
 use App\Models\User;
@@ -58,3 +59,4 @@ Route::post('/register', [LoginController::class, 'store']);
 Route::resource('/dashboard/posts', DashboardPostController::class)->middleware('auth');
 
 Route::resource('/candidates', CandidateController::class)->middleware('auth');
+Route::resource('/villages', VillageController::class)->middleware('auth');

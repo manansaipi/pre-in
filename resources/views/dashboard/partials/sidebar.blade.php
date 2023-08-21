@@ -23,27 +23,27 @@
             <!-- Divider -->
             <hr class="sidebar-divider">
 
-            {{-- <!-- Heading -->
+            <!-- Heading -->
             <div class="sidebar-heading">
                 Interface
             </div>
 
             <!-- Nav Item - Pages Collapse Menu -->
-            <li class="nav-item">
+            <li class="nav-item {{ ($active === "candidates" ) || ($active === "village") ? "active" : "" }}">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
                     aria-expanded="true" aria-controls="collapseTwo">
                     <i class="fas fa-fw fa-cog"></i>
                     <span>Components</span>
                 </a>
-                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                <div id="collapseTwo" class="collapse {{ ($active === "candidates" ) || ($active === "village") ? "show" : "" }}" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Custom Components:</h6>
-                        <a class="collapse-item" href="buttons.html">Buttons</a>
-                        <a class="collapse-item" href="cards.html">Cards</a>
+                        <h6 class="collapse-header">Tables:</h6>
+                        <a class="collapse-item {{ ($active === "candidates") ? "active" : "" }}" href="candidates">Candidate</a>
+                        <a class="collapse-item {{ ($active === "village") ? "active" : "" }}" href="villages">Village</a>
                     </div>
                 </div>
             </li>
-
+{{-- 
             <!-- Nav Item - Utilities Collapse Menu -->
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
@@ -100,11 +100,11 @@
             </li> --}}
 
             <!-- Nav Item - Tables -->
-            <li class="nav-item {{ ($active === "candidates") ? 'active' : '' }}">
+            {{-- <li class="nav-item {{ ($active === "candidates") ? 'active' : '' }}">
                 <a class="nav-link" href="candidates">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Candidates</span></a>
-            </li>
+            </li> --}}
 
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">

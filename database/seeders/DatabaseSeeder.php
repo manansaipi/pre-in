@@ -10,6 +10,7 @@ use App\Models\User;
 use App\Models\Category;
 use App\Models\Party;
 use App\Models\Post;
+use App\Models\Village;
 
 class DatabaseSeeder extends Seeder
 {
@@ -28,18 +29,19 @@ class DatabaseSeeder extends Seeder
             'password' => bcrypt('12345')
         ]);
 
-        // Party::create([
-        //     'name' => 'Hati Nurani Rakyat',
-        // ]);
-        // Party::create([
-        //     'name' => 'Golongan Karya',
-        // ]);
-        // Party::create([
-        //     'name' => 'Gerindra',
-        // ]);
+        Party::create([
+            'name' => 'Hati Nurani Rakyat',
+        ]);
+        Party::create([
+            'name' => 'Golongan Karya',
+        ]);
+        Party::create([
+            'name' => 'Gerindra',
+        ]);
 
         Candidate::factory(20)->create();
-        Party::factory(5)->create();
+        Village::factory(13)->create();
+        // Party::factory(5)->create();
 
 
 

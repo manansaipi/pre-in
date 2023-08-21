@@ -12,7 +12,7 @@ class PostController extends Controller
     public function index()
     {
         return view('dashboard.contents.chart', [
-            "title" => "Charts",
+            "active" => "Charts",
             // "posts" => Post::all()
             // "posts" => Post::with(['author', 'category'])->latest()->get(), // eager loading to fix n+1 problem
             "posts" =>  Post::latest()->filter(request(['search', 'category']))->get(), // eager loading to fix n+1 problem but already do in model os no need 'with' in here anymore
